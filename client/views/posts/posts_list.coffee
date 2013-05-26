@@ -1,4 +1,4 @@
-var postsData = [
+postsData = [
   {
     title: 'Introducing Telescope',
     author: 'Sacha Greif',
@@ -14,7 +14,6 @@ var postsData = [
     author: 'Tom Coleman',
     url: 'http://themeteorbook.com'
   }
-];
-Template.postsList.helpers({
-  posts: postsData
-});
+]
+
+Template.postsList.helpers {posts: postsData}
