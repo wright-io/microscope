@@ -3,7 +3,7 @@ Meteor.Router.add {
 	'/posts/:_id': {
 		to: 'postPage',
 		and: (id) -> Session.set 'currentPostId', id
-	},
+	}
 	'/posts/:_id/edit': {
 		to: 'postEdit',
 		and: (id) -> Session.set 'currentPostId', id
@@ -19,6 +19,10 @@ Meteor.Router.filters {
 			'loading'
 		else
 			'accessDenied'
+	'clearErrors': (page) ->
+		clearErrors()
+		page
 }
 
 Meteor.Router.filter 'requireLogin', {only: 'postSubmit'}
+Meteor.Router.filter 'clearErrors'
