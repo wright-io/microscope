@@ -7,14 +7,14 @@ if Posts.find().count() is 0
 	
 
 	Posts.insert {
-        title: 'Meteor',
-        author: 'Tom Coleman',
-        url: 'http://meteor.com'
-    }
+    title: 'Meteor',
+    author: 'Tom Coleman',
+    url: 'http://meteor.com'
+  }
 
-    Posts.insert {
-        title: 'The Meteor Book',
-        author: 'Tom Coleman',
-        url: 'http://themeteorbook.com'
-    }
+  Posts.insert {
+    title: 'The Meteor Book',
+    author: 'Tom Coleman',
+    url: 'http://themeteorbook.com'
+  }
 
