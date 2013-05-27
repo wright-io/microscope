@@ -3,5 +3,5 @@
 @throwError = (message) ->
   Errors.insert {message: message, seen: false}
 
-@clearErrors = () ->
+@clearErrors = ->
   Errors.remove {seen: true}

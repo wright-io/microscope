@@ -1,6 +1,6 @@
 Template.postPage.helpers {
-  currentPost: () ->
+  currentPost: ->
     Posts.findOne(Session.get 'currentPostId')
-  comments: () ->
+  comments: ->
     Comments.find {postId: this._id}
 }

@@ -1,9 +1,9 @@
 Template.errors.helpers {
-  errors: () ->
+  errors: ->
     Errors.find()
 }
 
-Template.error.rendered = () ->
+Template.error.rendered = ->
   error = @data
-  Meteor.defer () ->
+  Meteor.defer ->
     Errors.update error._id, {$set: {seen: true}}

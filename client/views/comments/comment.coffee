@@ -1,4 +1,4 @@
 Template.comment.helpers {
-  submittedText: () ->
+  submittedText: ->
     new Date(this.submitted).toString()
 }
