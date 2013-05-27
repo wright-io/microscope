@@ -2,9 +2,12 @@ Meteor.Router.add {
 	'/': 'postsList',
 	'/posts/:_id': {
 		to: 'postPage',
-		and: (id) -> 
-			Session.set 'currentPostId', id
+		and: (id) -> Session.set 'currentPostId', id
 	},
+	'/posts/:_id/edit': {
+		to: 'postEdit',
+		and: (id) -> Session.set 'currentPostId', id
+	}
 	'/submit': 'postSubmit'
 }
 
