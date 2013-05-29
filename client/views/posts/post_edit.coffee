@@ -1,5 +1,5 @@
 Template.postEdit.helpers {
-  post: () ->
+  post: ->
     Posts.findOne Session.get('currentPostId')
 }
 
