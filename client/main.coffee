@@ -1,4 +1,5 @@
-@postsHandle = Meteor.subscribeWithPagination 'newPosts', 10
+@newPostsHandle = Meteor.subscribeWithPagination 'newPosts', 5
+@bestPostsHandle = Meteor.subscribeWithPagination 'bestPosts', 5
 
 Deps.autorun ->
   Meteor.subscribe 'singlePost', Session.get('currentPostId')
