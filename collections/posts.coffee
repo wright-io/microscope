@@ -12,7 +12,6 @@ Posts.deny {
 
 Meteor.methods {
   post: (postAttributes) ->
-    console 'fick'
     user = Meteor.user()
     postWithSameLink = Posts.findOne {url: postAttributes.url}
 

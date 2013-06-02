@@ -9,8 +9,14 @@ Template.bestPosts.helpers {
 }
 
 Template.postsList.helpers {
-  posts: ->
-    Posts.find {}, {sort: this.sort, limit: this.handle.limit()}
+  postsWithRank: ->
+    i = 0
+    options = {sort: this.sort, limit: this.handle.limit()}
+
+    return Posts.find({}, options).map (post) ->
+      post._rank = i
+      i += 1
+      return post
 
   postsReady: ->
     this.handle.ready()
