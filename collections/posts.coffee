@@ -7,7 +7,9 @@ Posts.allow {
 
 Posts.deny {
   update: (userId, post, fieldNames) ->
-    _.without(fieldNames, 'url', 'title').length > 0
+    _.without(fieldNames,
+      'url', 'title', 'street', 'city', 'state', 'zip', 'deal', 'description', 'shortDescription')
+      .length > 0
 }
 
 Meteor.methods {
@@ -24,13 +26,15 @@ Meteor.methods {
     if postAttributes.url? and postWithSameLink
       throw new Meteor.Error 302, "This link has already been posted", postWithSameLink._id
 
-    post = _.extend(_.pick(postAttributes, 'url', 'title', 'message'), {
-      userId: user._id,
-      author: user.username,
-      submitted: new Date().getTime()
-      commentsCount: 0
-      upvoters: []
-      votes: 0
+    post = _.extend(_.pick(
+      postAttributes, 'url', 'title', 'description', 'deal', 'street', 'city', 'state', 'zip'), {
+        userId: user._id,
+        author: user.username,
+        submitted: new Date().getTime()
+        shortDescription: postAttributes.description.substr 0, 100
+        commentsCount: 0
+        upvoters: []
+        votes: 0
     })
 
     postId = Posts.insert post

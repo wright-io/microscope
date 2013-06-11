@@ -1,7 +1,16 @@
 <template name="postPage">
   {{#with currentPost}}
-    {{> postItem}}
-    
+    <div class="post">
+      <div class="post">{{> postSummary}}</div>
+      <p>
+        {{street}}<br/>
+        {{city}}, {{state}} {{zip}}<br/>
+        <span><a href="{{url}}">{{url}}</a></span>
+      </p>
+      <p><b>Deal: </b><i>{{deal}}</i></p>
+      {{description}}
+    </div>
+    <p>Comments</p>
     <ul class="comments">
       {{#each comments}}
         {{> comment}}
