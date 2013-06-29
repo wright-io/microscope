@@ -42,7 +42,7 @@ Meteor.methods {
   upvote: (postId) ->
     user = Meteor.user()
 
-    if !user? then throw new Meteor.Error 401, "Please sign in to vote"
+    if !user? then throw new Meteor.Error 401, "Please sign in to upvote"
 
     Posts.update {_id: postId, upvoters: {$ne: user._id}},
       {$addToSet: {upvoters: user._id}, $inc: {votes: 1}}
