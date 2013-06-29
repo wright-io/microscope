@@ -25,7 +25,7 @@ if Posts.find().count() is 0
 
   stackedId = Posts.insert {
     title: 'STACKED - Food well built'
-    deal: 'Become a STACKED friend to fight cystic fibrosis!'
+    deal: 'Become a STACKED friend and STACKED will donate 20% of your first meal and 5% of your meals thereafter to fight Cystic Fibrosis'
     description: '''
       The STACKED experience is all about getting exactly what you want. We offer America’s
       favorite foods – Burgers, Pizza, Salads and Mac ‘n’ Cheese. Choose between dozens of
@@ -69,7 +69,7 @@ if Posts.find().count() is 0
 
   Posts.insert {
     title: 'BJs Restaurant & Brewhouse'
-    deal: 'Pizookies and more'
+    deal: 'The Cookies 4 Kids program donates a portion of all Pizookie® dessert sales to the Cystic Fibrosis Foundation'
     description: '''
       "Welcome to BJ’s.” This is how you are greeted when you come into our welcoming, caring, 
       dependable, high-energy and fun casual restaurants, and we promise to do whatever it takes 
@@ -93,15 +93,23 @@ if Posts.find().count() is 0
     upvoters: [], votes: 0
   }
 
-  # Posts.insert {
-  #   title: 'The Meteor Book'
-  #   userId: tom._id
-  #   author: tom.profile.name
-  #   url: 'http://themeteorbook.com'
-  #   submitted: now - 12 * 3600 * 1000
-  #   commentsCount: 0
-  #   upvoters: [], votes: 0
-  # }
+  # for i in [1..10]
+  #   Posts.insert {
+  #     title: 'Test Org #' + i
+  #     deal: 'Test Org #' + i + ' deal'
+  #     description: 'Test Org #' + i + ' full description'
+  #     shortDescription: 'Test Org #' + i + ' short description'
+  #     street: 'Test Org #' + i + ' street'
+  #     city: 'Test Org #' + i + ' city'
+  #     state: 'CA'
+  #     zip: 54300 + i
+  #     userId: tom._id
+  #     author: tom.profile.name
+  #     url: 'http://google.com/?q=test-' + i
+  #     submitted: now - i * 3600 * 1000
+  #     commentsCount: 0
+  #     upvoters: [], votes: 0
+  #   }
 
   # for i in [1..10]
   #   Posts.insert {
@@ -113,3 +121,13 @@ if Posts.find().count() is 0
   #     commentsCount: 0
   #     upvoters: [], votes: 0
   #   }
+
+  # Posts.insert {
+  #   title: 'The Meteor Book'
+  #   userId: tom._id
+  #   author: tom.profile.name
+  #   url: 'http://themeteorbook.com'
+  #   submitted: now - 12 * 3600 * 1000
+  #   commentsCount: 0
+  #   upvoters: [], votes: 0
+  # }
