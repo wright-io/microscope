@@ -1,22 +1,19 @@
 Template.newPosts.helpers {
   options: ->
-    {sort: {submitted: -1}, handle: newPostsHandle}
+    {sort: {submitted: -1}}
 }
 
 Template.bestPosts.helpers {
   options: ->
-    {sort: {votes: -1}, handle: bestPostsHandle}
+    {sort: {votes: -1}}
 }
 
 Template.postsList.helpers {
   postsWithRank: ->
     i = 0
-    options = {sort: this.sort, limit: this.handle.limit()}
+    options = {sort: this.sort}
 
-    return Posts.find({}, options).map (post) ->
-      post._rank = i
-      i += 1
-      return post
+    return Posts.find({}, options)
 
   postsReady: ->
     this.handle.ready()

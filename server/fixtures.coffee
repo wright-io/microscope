@@ -93,23 +93,23 @@ if Posts.find().count() is 0
     upvoters: [], votes: 0
   }
 
-  # Posts.insert {
-  #   title: 'The Meteor Book'
-  #   userId: tom._id
-  #   author: tom.profile.name
-  #   url: 'http://themeteorbook.com'
-  #   submitted: now - 12 * 3600 * 1000
-  #   commentsCount: 0
-  #   upvoters: [], votes: 0
-  # }
+  Posts.insert {
+    title: 'The Meteor Book'
+    userId: tom._id
+    author: tom.profile.name
+    url: 'http://themeteorbook.com'
+    submitted: now - 12 * 3600 * 1000
+    commentsCount: 0
+    upvoters: [], votes: 0
+  }
 
-  # for i in [1..10]
-  #   Posts.insert {
-  #     title: 'Test post #' + i
-  #     userId: paul._id
-  #     author: paul.profile.name
-  #     url: 'http://google.com/?q=test-' + i
-  #     submitted: now - i * 3600 * 1000
-  #     commentsCount: 0
-  #     upvoters: [], votes: 0
-  #   }
+  for i in [1..10]
+    Posts.insert {
+      title: 'Test post #' + i
+      userId: paul._id
+      author: paul.profile.name
+      url: 'http://google.com/?q=test-' + i
+      submitted: now - i * 3600 * 1000
+      commentsCount: 0
+      upvoters: [], votes: 0
+    }

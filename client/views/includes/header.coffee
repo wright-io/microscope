@@ -8,3 +8,11 @@ Template.header.helpers {
 
     result = active and 'active'
 }
+
+Template.header.events {
+  'submit form': (event) ->
+    event.preventDefault()
+
+    Session.set 'keyword', $(event.target).find('[name=keyword]').val()
+    console.log "keyword", Session.get 'keyword'
+}
